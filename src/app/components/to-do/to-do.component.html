@@ -1,0 +1,21 @@
+<div class="flex justify-between items-center">
+  <div class="flex gap-4 items-center">
+    <span *ngIf="status=='Check'" class="flex items-center justify-center bg-secondary-400 rounded-full w-10 h-10">
+      <app-svg-icon  [icon]="status" ></app-svg-icon>
+    </span>
+    <span *ngIf="status=='X'" class="flex items-center justify-center bg-gray-200 border rounded-full w-10 h-10">
+      <app-svg-icon  [icon]="status" ></app-svg-icon>
+    </span>
+    <span *ngIf="status=='Normal'" class="flex items-center justify-center bg-white border-2 border-gray-500   rounded-full w-10 h-10">
+      <app-svg-icon  [icon]="status" ></app-svg-icon>
+    </span>
+    <h4>{{title}}</h4>
+    <div></div>
+  </div>
+  <div class="flex gap-4">
+    <app-svg-icon [icon]="'Tick'" [size]="28"></app-svg-icon>
+    <app-svg-icon [icon]="'Close'" [size]="28"></app-svg-icon>
+    <app-svg-icon [icon]="'Edit'" [size]="28"></app-svg-icon>
+    <app-svg-icon [icon]="'Delete'" [size]="28"></app-svg-icon>
+  </div>
+</div>

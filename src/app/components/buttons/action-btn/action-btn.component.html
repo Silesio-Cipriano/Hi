@@ -1,0 +1,8 @@
+<button class="flex items-center gap-2 justify-center w-32 h-10 rounded-dm border" 
+[ngClass]="light? 'bg-white text-txtPrimary  border-txtPrimary ':'bg-primary text-white border-primary'"
+> 
+  <app-svg-icon [icon]="icon" [size]="20"></app-svg-icon>
+  <span class="text-sm">
+    {{title}}
+  </span>
+</button>

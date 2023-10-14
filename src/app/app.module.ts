@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimaryButtonComponent } from './components/buttons/primary-button/primary-button.component';
 import { NormalInputComponent } from './components/inputs/normal-input/normal-input.component';
-import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { DashboardRoutingModule } from './pages/dashboard/dashboard-routing.module';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { PagesModule } from './pages/pages.module';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
+    PagesModule,
     DashboardRoutingModule
   ],
   schemas: [

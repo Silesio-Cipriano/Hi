@@ -1,0 +1,97 @@
+<main class="flex items-center justify-center my-auto h-screen mx-auto w-full  ">
+  <div class="w-full my-auto h-screen">
+    <!-- <div class="flex gap-10">
+      <button
+        class="w-32 text-sm h-10 rounded-dm border bg-txtPrimary text-white font-medium"
+      >
+        Today
+      </button>
+      <button class="w-32 text-sm h-10 rounded-dm border">Week</button>
+    </div> -->
+    <div class="px-10 mt-36 mx-auto w-9/12">
+      <div class="w-full my-auto">
+        <div class="flex justify-between  mt-14 w-full gap-95">
+          <div class="flex items-center gap-4">
+            <span class="font-bold text-xl"> Tasks To-do </span>
+            <span class="font-bold text-xl text-gray-400">{{tasks.length}}</span>
+          </div>
+          <div class="flex gap-4">
+            <app-action-btn
+              title="New task"
+              icon="Plus"
+              [light]="false"
+              (click)="openModal()"
+            ></app-action-btn>
+            <app-action-btn
+              title="Filter"
+              icon="Filter"
+              [light]="true"
+            ></app-action-btn>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-2" />
+      <div class="flex flex-col gap-4 mt-4">
+        <span *ngFor="let task of tasks">
+          <app-to-do icon="Normal" status="Normal" [title]="task.title" />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fixed top-0 right-0 left-0 bottom-0"
+    [ngClass]="modalOpen ? 'block' : 'hidden'"
+  >
+
+  <app-notification *ngIf="openNotification" [fcloseNotification]="closeNotification()" type="Alert" message="Please, complete all the fields in the form."></app-notification>
+    <div
+      class="w-full h-full bg-black bg-opacity-40 z-10 flex items-center justify-center"
+    >
+      <div class="w-4/12 bg-white z-50 border rounded-dm px-14 py-10">
+        <div class="border-b w-full pt-2">
+          <h2 class="font-semibold text-xl">Task To-do</h2>
+        </div>
+        <div class="flex flex-col gap-8">
+          <section class="flex flex-col">
+            <label class="font-semibold text-base mt-8">Title</label>
+            <textarea
+              title="title"
+              placeholder=""
+              class="bg-gray-200 resize-none mt-2 focus:border-primary px-2"
+              rows="3"
+              [(ngModel)]="textInput"
+            ></textarea>
+          </section>
+          <div class="flex items-end justify-between">
+            <section class="flex flex-col">
+              <label class="text-base font-semibold">Status</label>
+              <select
+                title="status"
+                class="w-32 h-10 rounded-dm px-2 mt-2  text-sm border bg-white"
+              >
+                <option value="#">Choose</option>
+                <option value="Normal">Normal</option>
+                <option value="Normal">Urgent</option>
+              </select>
+            </section>
+
+            <div class="flex gap-4">
+              <app-action-btn
+                title="Add"
+                icon="Plus"
+                [light]="false"
+                (click)="addTask()"
+              />
+              <app-action-btn
+                title="Close"
+                icon="X"
+                [light]="true"
+                (click)="closeModal()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

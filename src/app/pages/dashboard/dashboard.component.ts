@@ -36,9 +36,14 @@ export class DashboardComponent {
     }
   }
 
-
   menuResponsive(){
     this.menuBtn = !this.menuBtn;
+  }
+
+  menuHidden(){
+    if(this.menuBtn===false){
+      this.menuBtn = true;
+    }
   }
 
 

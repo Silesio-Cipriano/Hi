@@ -1,5 +1,5 @@
 <main class="flex w-full">
-  <div  [ngClass]="menuBtn ? 'w-28' : 'w-96'" 
+  <div  [ngClass]="menuBtn ? 'w-22' : 'w-80'" 
         class="h-screen px-8 py-10  border-r border-stroke relative" 
   >
     <nav class="flex flex-col justify-between h-full"  [ngClass]="menuBtn ? ' items-center' : 'block'"  >
@@ -10,33 +10,33 @@
           <app-svg-icon  [icon]="'man'" fill="red" [size]="32" ></app-svg-icon>
         </span>
         <button title="arrow" [ngClass]="menuBtn ? 'rotate-180 mt-4' : ''"  class="w-10 rounded-dm flex items-center justify-center border"  (click)="menuResponsive()">
-          <app-svg-icon [icon]="'ArrowLeft'" fill="red" [size]="28" ></app-svg-icon>
+          <app-svg-icon [icon]="'ArrowLeft'" fill="red" [size]="22" ></app-svg-icon>
         </button>
       </div>
 
-      <div class="-mt-96 ">
+      <div class=" ">
         <ul class="flex flex-col gap-10 ">
           <li>
             <a [ngClass]="routeActiveCheck.home?  'text-primary':'text-txtPrimary'"  routerLink="home" >
               <span class="flex gap-2 items-center">
-                <app-svg-icon [icon]="'Home'" [stroke]="routeActiveCheck.home?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'"  [size]="28"></app-svg-icon>
-                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-xl font-semibold">Home</h3>
+                <app-svg-icon [icon]="'Home'" [stroke]="routeActiveCheck.home?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'"  [size]="22"></app-svg-icon>
+                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-lg font-semibold">Home</h3>
               </span>
             </a>
           </li>
           <li>
             <a [ngClass]="routeActiveCheck.tasks?  'text-primary':'text-txtPrimary'"   routerLink="tasks" >
               <span class="flex gap-2 items-center">
-                <app-svg-icon [icon]="'Tasks'"  [stroke]="routeActiveCheck.tasks?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'"[size]="28" ></app-svg-icon>
-                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-xl font-semibold">Tasks</h3>
+                <app-svg-icon [icon]="'Tasks'"  [stroke]="routeActiveCheck.tasks?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'"[size]="22" ></app-svg-icon>
+                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-lg font-semibold">Tasks</h3>
               </span>
             </a>
           </li>
           <li>
             <a [ngClass]="routeActiveCheck.goals?  'text-primary':'text-txtPrimary'"  routerLink="goals" >
               <span class="flex gap-2 items-center">
-                <app-svg-icon [icon]="'Goal'"  [stroke]="routeActiveCheck.goals?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'" [size]="28" ></app-svg-icon>
-                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-xl font-semibold">Goals</h3>
+                <app-svg-icon [icon]="'Goal'"  [stroke]="routeActiveCheck.goals?  '#3B40D5':''"  [fill]="routeActiveCheck.home?  '#3B40D5':'#130A3B'" [size]="22" ></app-svg-icon>
+                <h3 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-lg font-semibold">Goals</h3>
               </span>
             </a>
           </li>
@@ -44,13 +44,13 @@
       </div>
       <div>
         <span class="flex gap-2 items-center">
-          <app-svg-icon  [icon]="'Logout'" fill="#130A3B" [size]="28"  ></app-svg-icon>
-          <h2 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-xl font-semibold">Logout</h2>
+          <app-svg-icon  [icon]="'Logout'" fill="#130A3B" [size]="22"  ></app-svg-icon>
+          <h2 [ngClass]="menuBtn ? ' hidden' : 'block'" class="text-lg font-semibold">Logout</h2>
         </span>
       </div>
     </nav>
   </div>
-  <div class="w-full h-screen"> 
-    <router-outlet></router-outlet>
+  <div class="w-full h-screen" (click)="menuHidden()"> 
+    <router-outlet ></router-outlet>
   </div>
 </main>

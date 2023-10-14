@@ -1,0 +1,35 @@
+.cardAlert {
+  border-radius: 9.263px;
+  border: 1px solid #ffb1b1;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 78, 78, 0.35) -79.41%,
+    #fff 28.26%
+  );
+}
+
+.cardConfirmation {
+  border-radius: 9.263px;
+  border: 1px solid #00cb4a;
+  background: linear-gradient(115deg, #00cb4a -79.41%, #fff 28.26%);
+}
+
+.cardInformation {
+  border-radius: 9.263px;
+  border: 1px solid #6a2bfb;
+  background: var(
+    --Line,
+    linear-gradient(
+      115deg,
+      #6a2bfb -79.41%,
+      rgba(106, 43, 251, 0.35) -79.39%,
+      #fff 28.26%
+    )
+  );
+}
+
+.cardUpdate {
+  border-radius: 9.263px;
+  border: 1px solid #000;
+  background: linear-gradient(115deg, #1b132f -79.41%, #fff 28.26%);
+}
